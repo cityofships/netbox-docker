@@ -1,11 +1,20 @@
+version: '3.4' # This is NOT the version of NetBox! No need to adjust :)
+
 services:
   netbox:
+    image: netbox:latest-plugins
     network_mode: host
     healthcheck:
-      start_period: 90s    
+      start_period: 90s
+    build:
+      context: .
+      dockerfile: Dockerfile-Plugins
+      network: host
   netbox-worker:
+    image: netbox:latest-plugins
     network_mode: host
   netbox-housekeeping:
+    image: netbox:latest-plugins
     network_mode: host
   postgres:
     network_mode: host
