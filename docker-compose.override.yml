@@ -1,6 +1,8 @@
 services:
   netbox:
     network_mode: host
+    healthcheck:
+      start_period: 90s    
   netbox-worker:
     network_mode: host
   netbox-housekeeping:
