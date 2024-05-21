@@ -1,0 +1,13 @@
+services:
+  netbox:
+    network_mode: host
+  netbox-worker:
+    network_mode: host
+  netbox-housekeeping:
+    network_mode: host
+  postgres:
+    network_mode: host
+  redis:
+    network_mode: host
+  redis-cache:
+    network_mode: host
